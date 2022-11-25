@@ -2,27 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarrinhoCompras.View.EditarProduto"
-             Title="{}">
+             Title="{}"
+             BackgroundColor="#e5e8e7">
 
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label FontFamily="century-gothic-bold.ttf#century-gothic-bold" 
+                   TextColor="White"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   Text="{}" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
 
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
 
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        
-        <StackLayout>
+
+        <Frame BackgroundColor="white"
+               Margin="10"
+               CornerRadius="20">
             
-            <Label Text="DESCRIÇAO:" />
-            <Entry x:Name="txt_descricao" Text="{Binding descricao}"/>
+            <StackLayout>
 
-            <Label Text="QUANTIDADE:" />
-            <Entry x:Name="txt_quantidade" Text="{Binding quantidade}"/>
+                <Label Text="DESCRIÇAO:" TextColor="#02274f" FontAttributes="Bold"/>
+                <Entry x:Name="txt_descricao" Text="{Binding descricao}" />
 
-            <Label Text="PREÇO:" />
-            <Entry x:Name="txt_preco" Text="{Binding preco}"/>
+                <Label Text="QUANTIDADE:" TextColor="#02274f" FontAttributes="Bold"/>
+                <Entry x:Name="txt_quantidade" Text="{Binding quantidade}"/>
 
-        </StackLayout>
+                <Label Text="PREÇO:" TextColor="#02274f" FontAttributes="Bold"/>
+                <Entry x:Name="txt_preco" Text="{Binding preco}"/>
+
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

@@ -2,8 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarrinhoCompras.View.Listagem"
-             Title="Lista de Compras"
-             BackgroundColor="#02274f">
+             BackgroundColor="#e5e8e7">
+
+     <NavigationPage.TitleView>
+        <StackLayout>
+            <Label FontFamily="century-gothic-bold.ttf#century-gothic-bold" 
+                   TextColor="White"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   Text="Lista de Compras" />
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_Somar" />
@@ -13,27 +22,29 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Frame BackgroundColor="#faf2ef"
+            <Frame BackgroundColor="white"
                    Margin="10"
                    CornerRadius="20">
-                <SearchBar x:Name="txt_busca" 
+                <SearchBar x:Name="txt_busca"
+                           Margin="-12,0,0,0"
                        Placeholder="Buscar produto"
+                       FontAttributes="Italic"
                        TextChanged="txt_busca_TextChanged"/>
             </Frame>
 
             <RefreshView x:Name="ref_carregando" IsRefreshing="True">
-                <Frame BackgroundColor="#faf2ef"
+                <Frame BackgroundColor="White"
                        Margin="10,0,10,10"
                        CornerRadius="20">
                     
                     <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
                         <ListView.Header>
                             <Grid RowDefinitions="Auto"
-                              ColumnDefinitions="*, Auto, Auto">
+                              ColumnDefinitions="*, 100, 70">
 
-                                <Label Grid.Row="0" Grid.Column="0" Text="DESCRIÇÃO" FontAttributes="Bold" />
-                                <Label Grid.Row="0" Grid.Column="1" Text="QNT"  FontAttributes="Bold"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="PREÇO"  FontAttributes="Bold"/>
+                                <Label Grid.Row="0" Grid.Column="0" Text="DESCRIÇÃO" FontAttributes="Bold" TextColor="#02274f"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="QNT"  FontAttributes="Bold" TextColor="#02274f"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="PREÇO"  FontAttributes="Bold" TextColor="#02274f"/>
                                 <Label Grid.Row="1" Grid.ColumnSpan="2" Text="" />
 
                             </Grid>
@@ -44,14 +55,15 @@
                                 <ViewCell>
 
                                     <ViewCell.ContextActions>
-                                        <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                                        <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/>
                                     </ViewCell.ContextActions>
 
-                                    <Grid RowDefinitions="Auto" ColumnDefinitions="*, Auto, Auto">
+                                    <Grid RowDefinitions="Auto" ColumnDefinitions="5, *, 105, 58">
 
-                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding descricao}" />
-                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding quantidade}" />
-                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding preco}" />
+                                        <Label Grid.Row="0" Grid.Column="0" Text="" />
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao}" />
+                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding quantidade}" />
+                                        <Label Grid.Row="0" Grid.Column="3" Text="{Binding preco}" />
 
                                     </Grid>
                                 </ViewCell>

@@ -3,24 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarrinhoCompras.View.NovoProduto"
              Title="Novo Produto"
-             BackgroundColor="#02274f">
+             BackgroundColor="#e5e8e7">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_Salvar"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Frame BackgroundColor="#faf2ef"
+        <Frame BackgroundColor="white"
                    Margin="10"
                    CornerRadius="20">
             <StackLayout>
-                <Label Text="DESCRIÇÃO:"  FontAttributes="Bold"/>
+                <Label Text="DESCRIÇÃO:" TextColor="#02274f" FontAttributes="Bold"/>
                 <Entry x:Name="txt_descricao" />
 
-                <Label Text="QUANTIDADE:"  FontAttributes="Bold"/>
+                <Label Text="QUANTIDADE:" TextColor="#02274f" FontAttributes="Bold"/>
                 <Entry x:Name="txt_quantidade" />
 
-                <Label Text="PREÇO:"  FontAttributes="Bold"/>
+                <Label Text="PREÇO:" TextColor="#02274f" FontAttributes="Bold"/>
                 <Entry x:Name="txt_preco" />
 
             </StackLayout>
