@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrinhoCompras.View.NovoProduto"
+             Title="Novo Produto"
+             BackgroundColor="#02274f">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_Salvar"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Frame BackgroundColor="#faf2ef"
+                   Margin="10"
+                   CornerRadius="20">
+            <StackLayout>
+                <Label Text="DESCRIÇÃO:"  FontAttributes="Bold"/>
+                <Entry x:Name="txt_descricao" />
+
+                <Label Text="QUANTIDADE:"  FontAttributes="Bold"/>
+                <Entry x:Name="txt_quantidade" />
+
+                <Label Text="PREÇO:"  FontAttributes="Bold"/>
+                <Entry x:Name="txt_preco" />
+
+            </StackLayout>
+        </Frame>
+
+    </ContentPage.Content>
+</ContentPage>
